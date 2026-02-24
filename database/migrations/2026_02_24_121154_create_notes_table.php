@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id')->unsigned();
+            $table->integer('category_id')->unsigned();
+            $table->string('title');
+            $table->string('description');
+            $table->date('event_date');
+            $table->boolean('is_pinned')->default(false);
+            $table->boolean('is_completed')->default(false);
             $table->timestamps();
         });
     }

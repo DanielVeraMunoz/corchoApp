@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('thanks', function (Blueprint $table) {
             $table->id();
+            $table->integer('notes_id')->unsigned();
+            $table->integer('giver_id')->unsigned();
             $table->timestamps();
         });
     }
