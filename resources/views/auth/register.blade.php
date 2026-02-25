@@ -26,11 +26,16 @@
             <x-input-error :messages="$errors->get('community_id')" class="mt-2" />
         </div>
 
-        <!-- Apartment Number -->
+        <!-- Floor -->
         <div class="mt-4">
-            <x-input-label for="apartment_number" :value="__('Apartment Number')" />
-            <x-text-input id="apartment_number" class="block mt-1 w-full" type="text" name="apartment_number" required />
-            <x-input-error :messages="$errors->get('apartment_number')" class="mt-2" />
+            <x-input-label for="floor" :value="__('Floor')" />
+            <x-text-input id="floor" class="block mt-1 w-full" type="number" name="floor" required />
+        </div>
+        
+        <!-- Door -->
+        <div class="mt-4">
+            <x-input-label for="door" :value="__('Door')" />
+            <x-text-input id="door" class="block mt-1 w-full" type="text" name="door" required />
         </div>
 
         <!-- Password -->

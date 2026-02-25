@@ -33,7 +33,8 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
 
-            'apartment_number' => ['required', 'string', 'max:10'],
+            'floor' => ['required', 'integer'],
+            'door' => ['required', 'string', 'max:10'],
             'community_id' => ['required', 'integer', 'exists:communities,id'],
 
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
@@ -43,8 +44,11 @@ class RegisteredUserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'apartment_number' => $request->apartment_number,
+
+            'floor' => $request->floor,
+            'door' => $request->door,
             'community_id' => $request->community_id,
+            
             'password' => Hash::make($request->password),
         ]);
 
