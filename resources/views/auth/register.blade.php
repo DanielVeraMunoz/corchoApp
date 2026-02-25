@@ -16,6 +16,23 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
+        <!-- Community -->
+        <div class="mt-4">
+            <x-input-label for="community_id" :value="__('Community')" />
+            <select id="community_id" name="community_id" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm" required>
+                <option value="">Select a community</option>
+                <option value="1">Comunidad 1</option>
+            </select>
+            <x-input-error :messages="$errors->get('community_id')" class="mt-2" />
+        </div>
+
+        <!-- Apartment Number -->
+        <div class="mt-4">
+            <x-input-label for="apartment_number" :value="__('Apartment Number')" />
+            <x-text-input id="apartment_number" class="block mt-1 w-full" type="text" name="apartment_number" required />
+            <x-input-error :messages="$errors->get('apartment_number')" class="mt-2" />
+        </div>
+
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
