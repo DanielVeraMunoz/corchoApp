@@ -35,7 +35,7 @@
         <!-- Door -->
         <div class="mt-4">
             <x-input-label for="door" :value="__('Door')" />
-            <x-text-input id="door" class="block mt-1 w-full" type="text" name="door" required />
+            <x-text-input id="door" class="block mt-1 w-full" type="number" name="door" required />
         </div>
 
         <!-- Password -->
