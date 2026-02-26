@@ -12,7 +12,8 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
+        $notes = Note::all();
+        return view('notes.index', ['notes' => $notes]);
     }
 
     /**
