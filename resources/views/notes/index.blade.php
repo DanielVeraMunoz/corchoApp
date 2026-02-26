@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <h1>Notas</h1>
             @foreach ($notes as $note)
-            <div>
+            <div class="bg-green-100 overflow-hidden shadow-sm sm:rounded-lg mb-4 p-4">
                 <h2>{{ $note->title }}</h2>
                 <p>{{ $note->description }}</p>
             </div>
