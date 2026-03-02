@@ -12,6 +12,12 @@
             <div class="bg-green-100 overflow-hidden shadow-sm sm:rounded-lg mb-4 p-4">
                 <h2>{{ $note->title }}</h2>
                 <p>{{ $note->description }}</p>
+
+                <form action="{{ route('notes.destroy', $note->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Eliminar</button>
+                </form>
             </div>
             @endforeach
         </div>
