@@ -21,7 +21,7 @@ class NoteController extends Controller
      */
     public function create()
     {
-        //
+        return view('notes.create');
     }
 
     /**
@@ -29,7 +29,23 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validar datos
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'event_date' => 'nullable',
+        ]);
+        Note::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'event_date' => $request->event_date,
+            'user_id' => 1, 
+            'category_id' => 1, 
+            'is_pinned' => false, 
+            'is_completed' => false, 
+        ]);
+
+        return redirect()->route('notes.index')->with('success', 'Nota creada exitosamente');
     }
 
     /**
