@@ -12,6 +12,6 @@ class NoteSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\Note::factory()->count(10)->create();
     }
 }
