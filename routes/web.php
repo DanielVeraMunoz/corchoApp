@@ -18,6 +18,7 @@ Route::middleware('auth')->group(function () {
     
     Route::resource('notes', \App\Http\Controllers\NoteController::class);
     Route::resource('communities', \App\Http\Controllers\CommunityController::class);
+    Route::resource('categories', \App\Http\Controllers\CategoryController::class);
     
 });
 
