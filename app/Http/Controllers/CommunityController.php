@@ -12,7 +12,8 @@ class CommunityController extends Controller
      */
     public function index()
     {
-        //
+        $communitys = Community::all();
+        return view('communities.index', ['communitys' => $communitys]);
     }
 
     /**
@@ -20,7 +21,7 @@ class CommunityController extends Controller
      */
     public function create()
     {
-        //
+        return view('communities.create');
     }
 
     /**
@@ -28,7 +29,15 @@ class CommunityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'adress' => 'required',
+            'postal_code' => 'required',
+        ]);
+
+        Community::create($request->all());
+
+        return redirect()->route('communities.index');
     }
 
     /**
@@ -44,7 +53,7 @@ class CommunityController extends Controller
      */
     public function edit(Community $community)
     {
-        //
+        return view('communities.edit', ['community' => $community]);
     }
 
     /**
@@ -52,7 +61,8 @@ class CommunityController extends Controller
      */
     public function update(Request $request, Community $community)
     {
-        //
+        $community->update($request->all());
+        return redirect()->route('communities.index');
     }
 
     /**
@@ -60,6 +70,7 @@ class CommunityController extends Controller
      */
     public function destroy(Community $community)
     {
-        //
+        $community->delete();
+        return redirect()->route('communities.index');
     }
 }
