@@ -17,6 +17,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     Route::resource('notes', \App\Http\Controllers\NoteController::class);
+    Route::resource('communities', \App\Http\Controllers\CommunityController::class);
     
 });
 
