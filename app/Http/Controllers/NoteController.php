@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Note;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
@@ -12,8 +13,12 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $notes = Note::all();
-        return view('notes.index', ['notes' => $notes]);
+        $notes = Note::when(request('category'), function ($query) {
+            $query->where('category_id', request('category'));
+        })->orderBy('is_pinned', 'desc')->orderBy('event_date', 'asc')->get();
+        
+        $categories = Category::all();
+        return view('notes.index', ['notes' => $notes, 'categories' => $categories]);
     }
 
     /**

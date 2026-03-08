@@ -9,6 +9,22 @@
             <h1 class="text-orange-500 italic text-5xl mb-5">¡Hola vecina!</h1>
             <p>Echa un vistazo a lo que está pasando por el bloque.</p>
         </div>
+
+        <!-- Filter -->
+
+        <div class="justify-center flex gap-2 mb-4">
+            
+            <a href="{{ route('notes.index') }}" class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-200">
+                Todo
+            </a>
+    
+            @foreach($categories as $category)
+                <a href="{{ route('notes.index', ['category' => $category->id]) }}" 
+                class="px-3 py-1 rounded-full text-xs font-semibold {{ request('category') == $category->id ? 'bg-gray-800 text-white' : 'bg-gray-200' }}">
+                    {{ $category->name }}
+                </a>
+            @endforeach
+        </div>
         
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex justify-center">
             
