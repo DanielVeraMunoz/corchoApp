@@ -13,12 +13,12 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'Avisos oficiales', 'color' => '#FF5733'],
-            ['name' => 'Eventos', 'color' => '#33FF57'],
-            ['name' => 'Favores', 'color' => '#3357FF'],
-            ['name' => 'Mercadillo', 'color' => '#FF33A1'],
-            ['name' => 'Incidencias', 'color' => '#33FFF5'],
-            ['name' => 'Cajón desastre', 'color' => '#F5FF33'],
+            ['name' => 'Avisos oficiales', 'color' => 'red'],
+            ['name' => 'Eventos', 'color' => 'green'],
+            ['name' => 'Favores', 'color' => 'blue'],
+            ['name' => 'Mercadillo', 'color' => 'pink'],
+            ['name' => 'Incidencias', 'color' => 'cyan'],
+            ['name' => 'Cajón desastre', 'color' => 'yellow'],
         ];
 
         foreach ($categories as $category) {

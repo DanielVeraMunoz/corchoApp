@@ -19,8 +19,11 @@
                 @foreach($notes as $note)
 
                 <div class="break-inside-avoid mb-6 mx-auto bg-white border border-gray-950 overflow-hidden shadow-sm m-0 p-4 w-80 md:w-60">
-                    <p class="text-lg font-semibold text-gray-700 mb-2">Categoría {{ $note->category }}</p>
+
+                    <x-category-badge :category="$note->category" />
+
                     <h2 class="text-xl font-bold text-gray-800 mb-5">{{ $note->title }}</h2>
+
                     <p>{{ $note->description }}</p>
                     <div class="border-b border-gray-800 my-5"></div>
                     <form action="{{ route('notes.destroy', $note->id) }}" method="POST">
