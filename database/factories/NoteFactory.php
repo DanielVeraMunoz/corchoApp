@@ -18,7 +18,7 @@ class NoteFactory extends Factory
     {
         return [
             'user_id' => 1,
-            'category_id' => 1,
+            'category_id' => fake()->numberBetween(1, 7),
             'title' => fake()->sentence(3),
             'description' => fake()->paragraph(),
             'event_date' => fake()->date(),
