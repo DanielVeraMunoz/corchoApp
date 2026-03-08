@@ -18,7 +18,7 @@ class NoteFactory extends Factory
     {
         return [
             'user_id' => 1,
-            'category_id' => fake()->randomElement([1, 3, 4, 5, 6, 7]),
+            'category_id' => fake()->numberBetween(14, 19),
             'title' => fake()->sentence(3),
             'description' => fake()->paragraph(),
             'event_date' => fake()->date(),
