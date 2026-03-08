@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('communities', \App\Http\Controllers\CommunityController::class);
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
     Route::resource('comments', \App\Http\Controllers\CommentController::class);
+    Route::resource('thanks', \App\Http\Controllers\ThankController::class);
     
 });
 
