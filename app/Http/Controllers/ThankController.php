@@ -28,7 +28,15 @@ class ThankController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'user_id' => 'required|integer',
+            'note_id' => 'required|integer',
+        ]);
+
+        $thank = Thank::create([
+            'user_id' => $request->input('user_id'),
+            'note_id' => $request->input('note_id'),
+        ]);
     }
 
     /**
