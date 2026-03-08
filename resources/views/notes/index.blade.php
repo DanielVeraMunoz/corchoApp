@@ -1,9 +1,6 @@
 <x-app-layout>
-    <div class="py-12">
-        
-        <div class="bg-green-100 overflow-hidden shadow-sm sm:rounded-lg mb-4 p-4">
-            <a href="{{ route('notes.create') }}">Crear nueva nota</a>
-        </div>
+    <div class="py-20">
+ 
 
         <div class="flex justify-center flex-col items-center mb-10">
             <h1 class="text-orange-500 italic text-5xl mb-5">¡Hola vecina!</h1>
