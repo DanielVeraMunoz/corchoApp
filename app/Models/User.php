@@ -48,4 +48,18 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
+
+    public function thanksReceived()
+    {
+        return Thank::whereHas('note', function ($query) {
+            $query->where('user_id', $this->id);
+        })->with('user', 'note')->get();
+    }
+
+    
 }
