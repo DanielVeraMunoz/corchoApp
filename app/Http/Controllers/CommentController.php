@@ -39,6 +39,7 @@ class CommentController extends Controller
             'user_id' => $request->input('user_id'),
             'note_id' => $request->input('note_id'),
         ]);
+        return redirect()->route('notes.show', $request->input('note_id'))->with('success', 'Comentario agregado exitosamente.');
     }
 
     /**
