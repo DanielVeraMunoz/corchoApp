@@ -2,14 +2,14 @@
     <div class="py-20">
  
 
-        <div class="flex justify-center flex-col items-center mb-10">
+        <div class="flex justify-center flex-col items-center mb-6">
             <h1 class="text-orange-500 italic text-5xl mb-5">¡Hola vecina!</h1>
             <p>Echa un vistazo a lo que está pasando por el bloque.</p>
         </div>
 
-        <!-- Filter -->
+        <!-- Filtro -->
 
-        <div class="justify-center flex gap-2 mb-4">
+        <div class="flex flex-wrap justify-center gap-2 mb-4 px-16">
             
             <a href="{{ route('notes.index') }}" class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-200">
                 Todo
@@ -38,12 +38,16 @@
                     <h2 class="text-xl font-bold text-gray-800 mb-5">{{ $note->title }}</h2>
 
                     <p>{{ $note->description }}</p>
+                    
                     <div class="border-b border-gray-800 my-5"></div>
-                    <form action="{{ route('notes.destroy', $note->id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit">Eliminar</button>
-                    </form>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">{{ $note->user->name }}</span>
+
+                        <span class="text-sm text-gray-500">
+                            {{ $note->comments->count() }} <i class="fa-regular fa-comment"></i> 
+                        </span>
+                    </div>
                 </div>
                 @endforeach
             </div>
