@@ -31,24 +31,23 @@
 
                 @foreach($notes as $note)
 
-                <div class="break-inside-avoid mb-6 mx-auto bg-white border border-gray-950 overflow-hidden shadow-sm m-0 p-4 w-80 md:w-60">
-
+                <a href="{{ route('notes.show', $note->id) }}" class="block break-inside-avoid mb-6 mx-auto bg-white border border-gray-950 overflow-hidden shadow-sm m-0 p-4 w-80 md:w-60 hover:border-orange-500 transition-colors">
+                    
                     <x-category-badge :category="$note->category" />
-
+                    
                     <h2 class="text-xl font-bold text-gray-800 mb-5">{{ $note->title }}</h2>
-
+                    
                     <p>{{ $note->description }}</p>
                     
                     <div class="border-b border-gray-800 my-5"></div>
                     
                     <div class="flex items-center justify-between">
                         <span class="text-sm text-gray-500">{{ $note->user->name }}</span>
-
                         <span class="text-sm text-gray-500">
                             {{ $note->comments->count() }} <i class="fa-regular fa-comment"></i> 
                         </span>
                     </div>
-                </div>
+                </a>
                 @endforeach
             </div>
         </div>
