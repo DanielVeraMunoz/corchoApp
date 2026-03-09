@@ -28,7 +28,13 @@
                 <div class="space-y-4 mb-6">
                     @foreach($comments as $comment)
                         <div class="bg-gray-50 p-3 rounded">
-                            <p class="font-bold text-sm text-gray-800">{{ $comment->user->name }}</p>
+                            
+                            <p class="font-bold text-sm text-gray-800">
+                                {{ $comment->user->name }}
+                                @if($comment->user->id === $note->user_id)
+                                    <span class="text-xs text-orange-500">(autor/a)</span>
+                                @endif
+                            </p>
                             <p class="text-gray-700">{{ $comment->content }}</p>
                         </div>
                     @endforeach
