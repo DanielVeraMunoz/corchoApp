@@ -9,7 +9,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jaro&display=swap" rel="stylesheet">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'CORCHO') }}</title>
+
+        <link rel="icon" type="image/png" href="/favicon.png">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

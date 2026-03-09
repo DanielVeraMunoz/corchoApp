@@ -26,7 +26,8 @@ class NoteController extends Controller
      */
     public function create()
     {
-        return view('notes.create');
+        $categories = Category::all();
+        return view('notes.create', ['categories' => $categories]);
     }
 
     /**
@@ -39,13 +40,15 @@ class NoteController extends Controller
             'title' => 'required',
             'description' => 'required',
             'event_date' => 'nullable',
+            'category_id' => 'required|exists:categories,id',
+            
         ]);
         Note::create([
             'title' => $request->title,
             'description' => $request->description,
             'event_date' => $request->event_date,
             'user_id' => 1, 
-            'category_id' => 1, 
+            'category_id' => $request->category_id, 
             'is_pinned' => false, 
             'is_completed' => false, 
         ]);
@@ -58,7 +61,8 @@ class NoteController extends Controller
      */
     public function show(Note $note)
     {
-        //
+        $comments = $note->comments()->with('user')->get();
+        return view('notes.show', ['note' => $note, 'comments' => $comments]);
     }
 
     /**
