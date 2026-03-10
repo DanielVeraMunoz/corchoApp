@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('comments', \App\Http\Controllers\CommentController::class);
     Route::resource('thanks', \App\Http\Controllers\ThankController::class);
 
-    Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
+    Route::get('/users/{user}', [ProfileController::class, 'show'])->name('users.show');
     
 });
 

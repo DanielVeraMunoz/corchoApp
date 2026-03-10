@@ -59,8 +59,8 @@ class ProfileController extends Controller
         return Redirect::to('/');
     }
 
-    public function showPublic(User $user){
+    public function show(User $user){
         $thanksReceived = $user->thanksReceived();
-        return view('users.show', compact('user', 'thanksReceived'));
+        return view('profile.show', compact('user', 'thanksReceived'));
     }
 }

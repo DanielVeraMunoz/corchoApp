@@ -61,5 +61,10 @@ class User extends Authenticatable
         })->with('user', 'note')->get();
     }
 
+    public function community()
+    {
+        return $this->belongsTo(Community::class);
+    }
+
     
 }
