@@ -58,7 +58,7 @@ class User extends Authenticatable
     {
         return Thank::whereHas('note', function ($query) {
             $query->where('user_id', $this->id);
-        })->with('user', 'note')->get();
+        })->with('giver', 'recipient', 'note')->get();
     }
 
     public function community()

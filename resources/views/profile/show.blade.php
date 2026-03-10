@@ -27,8 +27,8 @@
                     @foreach($thanksReceived as $thank)
                         <div class="bg-orange-50 p-3 rounded border border-gray-200">
                             <p class="text-sm">
-                                <a href="{{ route('users.show', $thank->user->id) }}" class="text-orange-500 font-bold hover:underline">
-                                    {{ $thank->user->name }}
+                                <a href="{{ route('users.show', $thank->giver->id) }}" class="text-orange-500 font-bold hover:underline">
+                                    {{ $thank->giver->name }}
                                 </a>
                                 le dio las gracias en
                                 <a href="{{ route('notes.show', $thank->note->id) }}" class="text-orange-500 hover:underline">
