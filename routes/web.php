@@ -21,6 +21,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
     Route::resource('comments', \App\Http\Controllers\CommentController::class);
     Route::resource('thanks', \App\Http\Controllers\ThankController::class);
+
+    Route::get('/users/{user}', [ProfileController::class, 'show'])->name('users.show');
     
 });
 

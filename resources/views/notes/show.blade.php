@@ -10,9 +10,20 @@
                 </div>
 
                 <!-- Autor y fecha -->
-                <p class="text-sm text-gray-500 mb-6">
-                    Por {{ $note->user->name }} · {{ $note->created_at->format('d/m/Y') }}
-                </p>
+                <div class="flex items-center">
+                    <p class="text-sm text-gray-500 mb-6">
+                        Por&nbsp;
+                    </p>
+
+                    <a href="{{ route('users.show', $note->user->id) }}" class="text-sm text-orange-500 mb-6">
+                        {{ $note->user->name }}
+                    </a>
+
+                    <p class="text-sm text-gray-500 mb-6">
+                        &nbsp;· {{ $note->created_at->format('d/m/Y') }}
+                    </p>
+                </div> 
+
             </div>
             
             <h1 class="text-2xl font-bold text-gray-800 mb-4">{{ $note->title }}</h1>
