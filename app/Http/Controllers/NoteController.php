@@ -62,7 +62,8 @@ class NoteController extends Controller
     public function show(Note $note)
     {
         $comments = $note->comments()->with('user')->get();
-        return view('notes.show', ['note' => $note, 'comments' => $comments]);
+        $thanks = $note->thanks()->with('giver')->get();
+        return view('notes.show', ['note' => $note, 'comments' => $comments, 'thanks' => $thanks]);
     }
 
     /**

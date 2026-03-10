@@ -33,4 +33,9 @@ class Note extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function thanks()
+    {
+        return $this->hasMany(Thank::class);
+    }
 }
