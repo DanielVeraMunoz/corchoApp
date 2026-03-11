@@ -13,9 +13,13 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $notes = Note::when(request('category'), function ($query) {
+        $notes = Note::where('is_completed', false)
+        ->when(request('category'), function ($query) {
             $query->where('category_id', request('category'));
-        })->orderBy('is_pinned', 'desc')->orderBy('event_date', 'asc')->get();
+        })
+        ->orderBy('is_pinned', 'desc')
+        ->orderBy('event_date', 'asc')
+        ->get();
         
         $categories = Category::all();
         return view('notes.index', ['notes' => $notes, 'categories' => $categories]);
@@ -79,6 +83,12 @@ class NoteController extends Controller
      */
     public function update(Request $request, Note $note)
     {
+
+        if ($request->has('is_completed')) {
+        $note->update(['is_completed' => true]);
+        return redirect()->route('notes.index')->with('success', 'Nota cerrada');
+        }
+
         $request->validate([
             'title' => 'required',
             'description' => 'required',
