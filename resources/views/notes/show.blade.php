@@ -67,7 +67,8 @@
         <div x-show="resolverOpen" x-transition.opacity style="display: none;" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div class="bg-white p-6 rounded-lg w-full max-w-md mx-4">
                 <h2 class="text-xl font-bold text-gray-800 mb-4">¿A quién quieres agradecer?</h2>
-                @forelse($comments as $comment)
+                
+                @forelse($commentUsers as $user)
                     <div class="flex justify-between items-center p-3 border-b border-gray-200">
                         <div>
                             <span class="font-bold text-gray-800">{{ $comment->user->name }}</span>
@@ -87,6 +88,7 @@
                 @empty
                     <p class="text-gray-500">No hay comentarios para agradecer.</p>
                 @endforelse
+
                 <form action="{{ route('notes.update', $note->id) }}" method="POST" class="mt-4">
                     @csrf
                     @method('PATCH')
