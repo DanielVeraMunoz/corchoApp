@@ -31,7 +31,7 @@
 
                 @foreach($notes as $note)
 
-                <a href="{{ route('notes.show', $note->id) }}" class="block break-inside-avoid mb-6 mx-auto bg-white border border-gray-950 overflow-hidden shadow-sm m-0 p-4 w-96 md:w-60 hover:border-orange-500 transition-colors">
+                <a href="{{ route('notes.show', $note->id) }}" class="block break-inside-avoid mb-6 mx-auto bg-white border border-gray-950 overflow-hidden shadow-sm m-0 p-4  w-full max-w-lg hover:border-orange-500 transition-colors">
                     
                     <div class="flex items-center justify-between">
                         <x-category-badge :category="$note->category" />
