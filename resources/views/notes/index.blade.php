@@ -11,13 +11,13 @@
 
         <div class="flex flex-wrap justify-center gap-2 mb-4 px-16">
             
-            <a href="{{ route('notes.index') }}" class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-200">
+            <a href="{{ route('notes.index') }}" class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-200 hover:bg-gray-300">
                 Todo
             </a>
     
             @foreach($categories as $category)
                 <a href="{{ route('notes.index', ['category' => $category->id]) }}" 
-                class="px-3 py-1 rounded-full text-xs font-semibold {{ request('category') == $category->id ? 'bg-gray-800 text-white' : 'bg-gray-200' }}">
+                class="px-3 py-1 rounded-full text-xs font-semibold {{ request('category') == $category->id ? 'bg-gray-800 text-white' : 'bg-gray-200' }} hover:bg-gray-300">
                     {{ $category->name }}
                 </a>
             @endforeach
@@ -31,7 +31,7 @@
 
                 @foreach($notes as $note)
 
-                <a href="{{ route('notes.show', $note->id) }}" class="block break-inside-avoid mb-6 mx-auto bg-white border border-gray-950 overflow-hidden shadow-sm m-0 p-4  w-full max-w-lg hover:border-orange-500 transition-colors">
+                <a href="{{ route('notes.show', $note->id) }}" class="block break-inside-avoid mb-6 mx-auto bg-white border border-gray-950 overflow-hidden shadow-sm m-0 p-4  w-full max-w-lg hover:border-orange-500 transition-colors hover:scale-[1.02] transition-transform">
                     
                     <div class="flex items-center justify-between">
                         <x-category-badge :category="$note->category" />
