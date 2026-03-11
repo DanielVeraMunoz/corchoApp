@@ -16,7 +16,14 @@
                 </div>
             </div>
             <h1 class="text-2xl font-bold text-gray-800 mb-4">{{ $note->title }}</h1>
-            <p class="text-gray-700 mb-8">{{ $note->description }}</p>
+            <p class="text-gray-700 mb-5">{{ $note->description }}</p>
+
+            @if($note->event_date)
+                <p class="text-sm text-gray-500 mb-4">
+                    {{ \Carbon\Carbon::parse($note->event_date)->format('d/m/Y H:i') }}
+                </p>
+            @endif
+
             <div class="border-b border-gray-300 mb-6"></div>
             <!-- Comentarios -->
             <h2 class="text-sm font-bold text-gray-800 mb-4">Comentarios ({{ $comments->count() }})</h2>

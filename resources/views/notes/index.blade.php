@@ -44,8 +44,14 @@
                     </div>
                     <h2 class="text-xl font-bold text-gray-800 mb-5">{{ $note->title }}</h2>
                     
-                    <p>{{ $note->description }}</p>
+                    <p class="mb-5">{{ $note->description }}</p>
                     
+                    @if($note->event_date)
+                        <p class="text-sm text-gray-500">
+                            {{ \Carbon\Carbon::parse($note->event_date)->format('d/m/Y H:i') }}
+                        </p>
+                    @endif
+
                     <div class="border-b border-gray-800 my-5"></div>
                     
                     <div class="flex items-center justify-between">
