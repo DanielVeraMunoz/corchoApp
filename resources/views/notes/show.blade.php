@@ -62,7 +62,7 @@
                     @else
                         <div></div>
                     @endif
-                    <!-- Volver + Comentar - a la derecha -->
+                    <!-- Volver + Comentar -->
                     <div class="flex gap-2">
                         <a href="{{ route('notes.index') }}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Volver</a>
                         <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">Comentar</button>
@@ -105,7 +105,7 @@
                     </button>
                 </form>
                 <button @click="resolverOpen = false" class="mt-3 w-full text-gray-500 text-center">
-                    Cancelar
+                    Volver
                 </button>
             </div>
         </div>
