@@ -7,12 +7,12 @@
             <form action="{{ route('notes.store') }}" method="POST">
                 @csrf
                 <div class="mb-4">
-                    <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Título:</label>
+                    <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Título: <span class="text-orange-500">*</span></label>
                     <input type="text" name="title" id="title" class="w-full border border-gray-300 rounded p-2" required>
                 </div>
                 
                 <div class="mb-4">
-                    <label for="category_id" class="block text-gray-700 text-sm font-bold mb-2">Categoría:</label>
+                    <label for="category_id" class="block text-gray-700 text-sm font-bold mb-2">Categoría: <span class="text-orange-500">*</span></label> 
                     <select name="category_id" id="category_id" class="w-full border border-gray-300 rounded p-2" required>
                         <option value="">Selecciona una categoría</option>
                         @foreach($categories as $category)
@@ -22,8 +22,13 @@
                 </div>
                 
                 <div class="mb-4">
-                    <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Descripción:</label>
+                    <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Descripción: <span class="text-orange-500">*</span></label>
                     <textarea name="description" id="description" rows="4" class="w-full border border-gray-300 rounded p-2" required></textarea>
+                </div>
+
+                <div class='mb-4'>
+                    <label for="event_date" class="block text-gray-700 text-sm font-bold mb-2">Fecha del evento:</label>
+                    <input type="datetime-local" name="datetime-local" id="event_date" class="w-full border border-gray-300 rounded p-2">
                 </div>
                 
                 <div class="flex justify-between">
