@@ -8,7 +8,7 @@
                     <a href="{{ route('notes.index') }}">
                         <span class="text-orange-500 text-5xl font-jaro ml-3 hover:text-orange-600">
                         CORCHO
-                    </span>
+                        </span>
                     </a>
                 </div>
 
