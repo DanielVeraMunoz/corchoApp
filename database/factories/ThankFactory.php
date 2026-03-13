@@ -19,7 +19,7 @@ class ThankFactory extends Factory
         return [
             'note_id' => \App\Models\Note::all()->random()->id,
             'giver_id' => \App\Models\User::all()->random()->id,
-            'receiver_id' => \App\Models\User::all()->random()->id,
+            'recipient_id' => \App\Models\User::all()->random()->id,
         ];
     }
 }

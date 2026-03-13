@@ -19,7 +19,7 @@ class CommentFactory extends Factory
         return [
             'note_id' => \App\Models\Note::all()->random()->id,
             'user_id' => \App\Models\User::all()->random()->id,
-            'content' => $this->faker->paragraph(),
+            'content' => $this->faker->sentence(),
         ];
     }
 }

@@ -17,7 +17,7 @@ class NoteFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => 1,
+            'user_id' => \App\Models\User::all()->random()->id,
             'category_id' => fake()->numberBetween(14, 19),
             'title' => fake()->sentence(3),
             'description' => fake()->paragraph(),
