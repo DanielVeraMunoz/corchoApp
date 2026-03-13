@@ -39,7 +39,7 @@ class ThankController extends Controller
             ->first();
 
         if ($existingThank) {
-            return redirect()->back()->with('error', 'Ya has agradecido esta nota.');
+            $existingThank->delete();
         } else {
             Thank::create([
                 'note_id' => $request->input('note_id'),
