@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Thank extends Model
 {
+    use HasFactory;
     protected $fillable = ['note_id', 'giver_id', 'recipient_id'];
 
 

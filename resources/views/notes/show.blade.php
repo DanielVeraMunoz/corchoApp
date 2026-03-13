@@ -78,17 +78,17 @@
                 @forelse($commentUsers as $user)
                     <div class="flex justify-between items-center p-3 border-b border-gray-200">
                         <div>
-                            <span class="font-bold text-gray-800">{{ $comment->user->name }}</span>
-                            @if($comment->user->id === $note->user_id)
+                            <span class="font-bold text-gray-800">{{ $user->name }}</span>
+                            @if($user->id === $note->user_id)
                                 <span class="text-xs text-orange-500">(autor/a)</span>
                             @endif
                         </div>
                         <form action="{{ route('thanks.store') }}" method="POST">
                             @csrf
                             <input type="hidden" name="note_id" value="{{ $note->id }}">
-                            <input type="hidden" name="recipient_id" value="{{ $comment->user->id }}">
+                            <input type="hidden" name="recipient_id" value="{{ $user->id }}">
                             <button type="submit">
-                                <i class="{{ $thanks->contains('recipient_id', $comment->user->id) ? 'fa-solid' : 'fa-regular' }} fa-heart text-2xl {{ $thanks->contains('recipient_id', $comment->user->id) ? 'text-orange-500' : 'text-gray-400' }}"></i>
+                                <i class="{{ $thanks->contains('recipient_id', $user->id) ? 'fa-solid' : 'fa-regular' }} fa-heart text-2xl {{ $thanks->contains('recipient_id', $user->id) ? 'text-orange-500' : 'text-gray-400' }}"></i>
                             </button>
                         </form>
                     </div>
