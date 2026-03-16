@@ -12,6 +12,8 @@ class NoteSeeder extends Seeder
      */
     public function run(): void
     {
+        app(\Faker\Generator::class)->locale('es_ES');
+
         \App\Models\Note::factory()->count(10)->create();
     }
 }

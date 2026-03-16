@@ -12,6 +12,8 @@ class CommentSeeder extends Seeder
      */
     public function run(): void
     {
+        app(\Faker\Generator::class)->locale('es_ES');
+        
         $notes = \App\Models\Note::all();
         $users = \App\Models\User::all();
 
