@@ -32,7 +32,10 @@
                     @foreach($comments as $comment)
                         <div class="bg-gray-50 p-3 rounded">
                             <p class="font-bold text-sm text-gray-800">
-                                {{ $comment->user->name }}
+                                
+                                <a href="{{ route('users.show', $comment->user->id) }}" class="text-gray-800 hover:underline">
+                                    {{ $comment->user->name }}
+                                </a>
                                 @if($comment->user->id === $note->user_id)
                                     <span class="text-xs text-orange-500">(autor/a)</span>
                                 @endif
