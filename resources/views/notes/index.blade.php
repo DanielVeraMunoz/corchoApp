@@ -28,20 +28,22 @@
             
             <!-- contenedor de las notas -->
             <div class="columns-1 md:columns-3 gap-6 px-4">
-
+            
                 @foreach($notes as $note)
 
                 <a href="{{ route('notes.show', $note->id) }}" class="block break-inside-avoid mb-6 mx-auto bg-white border border-gray-950 overflow-hidden shadow-sm m-0 p-4  w-full max-w-lg hover:border-orange-500 transition-colors hover:scale-[1.02] transition-transform">
                     
                     <div class="flex items-center justify-between">
                         <x-category-badge :category="$note->category" />
-                        @if($note->is_pinned)
+                        @if($note->category_id == 14)
                             <span class="text-orange-500">
-                                <i class="fa-solid fa-thumbtack"></i>
+                                <i class="fa-solid fa-star"></i>
                             </span>
                         @endif
 
                     </div>
+
+                    
                     <h2 class="text-xl font-bold text-gray-800 mb-5">{{ $note->title }}</h2>
                     
                     <p class="mb-5">{{ $note->description }}</p>

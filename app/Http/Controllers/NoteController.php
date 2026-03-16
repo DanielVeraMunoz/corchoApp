@@ -17,8 +17,7 @@ class NoteController extends Controller
         ->when(request('category'), function ($query) {
             $query->where('category_id', request('category'));
         })
-        ->orderBy('is_pinned', 'desc')
-        ->orderBy('event_date', 'asc')
+        // ->orderBy('created_at', 'desc')
         ->get();
         
         $categories = Category::all();
