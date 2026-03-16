@@ -3,7 +3,7 @@
  
 
         <div class="flex justify-center flex-col items-center mb-6">
-            <h1 class="text-orange-500 italic text-3xl mb-5 md:text-5xl">¡Hola vecina!</h1>
+            <h1 class="text-orange-500 italic text-5xl mb-5 ">¡Hola vecina!</h1>
             <p class="text-gray-600 text-center text-sm md:text-m">Echa un vistazo a lo que está pasando por el bloque.</p>
         </div>
 
