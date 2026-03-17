@@ -139,21 +139,8 @@ Ejecutar `php artisan db:seed` para cargar datos de ejemplo.
 <img src="docs/images/screenshot4.png" width="300">
 
 
-
-
-
 ---
 
-## Limitaciones actuales
-
-- 🚧 Solo existe un tipo de usuario (vecino). No hay diferenciación entre administrador y usuarios normales.
-- 🚧 No hay sistema de notificaciones en tiempo real.
-- 🚧 No hay chat interno entre usuarios.
-- 🚧 No hay sistema de avisos por email o SMS.
-- 🚧 No se pueden subir imágenes/archivos a las notas.
-- 🚧 Sistema de recuperación de contraseña no implementado (solo disponible en modo desarrollo/log).
-
----
 
 ## Resolución de problemas
 
@@ -166,14 +153,6 @@ php artisan config:clear
 php artisan route:clear
 ```
 
-### Correo electrónico
-
-El sistema de recuperación de contraseña está configurado en modo log. Los correos se almacenan en:
-
-```
-storage/logs/laravel.log
-```
-
 ---
 
 ## Ramas del proyecto
@@ -184,11 +163,18 @@ Rama base de Laravel. Contiene el proyecto limpio sin personalizaciones.
 
 ### `develop`
 
-Rama de desarrollo con el código actual del proyecto:
-- Instalación de Breeze
-- Migraciones y seeders
-- CRUD completo de notas, comunidades, categorías, comentarios
-- Sistema de agradecimientos
+Rama de desarrollo con el código actual del proyecto.
+
+---
+
+## Limitaciones actuales
+
+- 🚧 Solo existe un tipo de usuario (vecino). No hay diferenciación entre administrador y usuarios normales.
+- 🚧 No hay sistema de notificaciones en tiempo real.
+- 🚧 No hay chat interno entre usuarios.
+- 🚧 No hay sistema de avisos por email o SMS.
+- 🚧 No se pueden subir imágenes/archivos a las notas.
+- 🚧 Sistema de recuperación de contraseña no implementado (solo disponible en modo desarrollo/log).
 
 ---
 
