@@ -114,17 +114,33 @@ Ejecutar `php artisan db:seed` para cargar datos de ejemplo.
 
 ## Capturas de pantalla
 
-![Pantalla principal](docs/images/screenshot1.png)
+**Pantalla de inicio**
 
-![Dashboard](docs/images/screenshot2.png)
+<img src="docs/images/screenshot1.png" width="500">
 
-![Notas](docs/images/screenshot3.png)
+**Login**
 
-![Crear nota](docs/images/screenshot4.png)
+<img src="docs/images/screenshot6.png" width="500">
 
-![Categorías](docs/images/screenshot5.png)
+**Vista de las notas**
 
-![Comunidades](docs/images/screenshot6.png)
+<img src="docs/images/screenshot5.png" width="500">
+
+**Crear una nota**
+
+<img src="docs/images/screenshot3.png" width="500">
+
+**Entrando en una nota**
+
+<img src="docs/images/screenshot2.png" width="500">
+
+**Versión movil (responsive)**
+
+<img src="docs/images/screenshot4.png" width="300">
+
+
+
+
 
 ---
 
