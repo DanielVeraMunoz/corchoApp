@@ -16,6 +16,7 @@ class CommentFactory extends Factory
      */
     public function definition(): array
     {
+        $this->faker->locale('es_ES');
         return [
             'note_id' => \App\Models\Note::all()->random()->id,
             'user_id' => \App\Models\User::all()->random()->id,

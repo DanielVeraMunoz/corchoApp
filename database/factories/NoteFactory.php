@@ -16,14 +16,15 @@ class NoteFactory extends Factory
      */
     public function definition(): array
     {
+        $this->faker->locale('es_ES');
         return [
             'user_id' => \App\Models\User::all()->random()->id,
             'category_id' => \App\Models\Category::all()->random()->id,
-            'title' => fake()->sentence(3),
-            'description' => fake()->paragraph(),
+            'title' => $this->faker->sentence(3),
+            'description' => substr($this->faker->paragraph(), 0, 200),
             'event_date' => fake()->date(),
             'is_pinned' => fake()->boolean(),
-            'is_completed' => fake()->boolean(),
+            'is_completed' => false,
         ];
     }
 }

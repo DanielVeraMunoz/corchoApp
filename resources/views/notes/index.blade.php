@@ -35,7 +35,7 @@
                     
                     <div class="flex items-center justify-between">
                         <x-category-badge :category="$note->category" />
-                        @if($note->category_id == 14)
+                        @if($note->category_id == 1)
                             <span class="text-orange-500">
                                 <i class="fa-solid fa-star"></i>
                             </span>
