@@ -1,5 +1,7 @@
 # corchoApp: Red vecinal comunitaria
 
+![CORCHO](docs/images/screenshot7.png)
+
 ## Descripción
 
 Aplicación web para comunidades de vecinos que permite compartir anuncios, pedir ayuda, vender objetos y organizar eventos comunitarios. Inspirado en plataformas como Nextdoor, diseñado para bloques residenciales pequeños.
