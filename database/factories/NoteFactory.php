@@ -18,7 +18,7 @@ class NoteFactory extends Factory
     {
         return [
             'user_id' => \App\Models\User::all()->random()->id,
-            'category_id' => fake()->numberBetween(14, 19),
+            'category_id' => \App\Models\Category::all()->random()->id,
             'title' => fake()->sentence(3),
             'description' => fake()->paragraph(),
             'event_date' => fake()->date(),

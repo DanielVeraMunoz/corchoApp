@@ -4,18 +4,19 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Community;
 
-class UserSeeder extends Seeder
+class CommunitySeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        app(\Faker\Generator::class)->locale('es_ES');
-        
-        \App\Models\User::factory(10)->create();
-
-    
+        Community::create([
+            'name' => 'IT Academy',
+            'adress' => 'Calle Llacuna',
+            'postal_code' => '08018',
+        ]);
     }
 }
