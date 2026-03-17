@@ -20,8 +20,10 @@
         <div class="mt-4">
             <x-input-label for="community_id" :value="__('Comunidad')" />
             <select id="community_id" name="community_id" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm" required>
-                <option value="">Select a community</option>
-                <option value="1">Comunidad 1</option>
+                <option value="">Selecciona una comunidad</option>
+                @foreach(App\Models\Community::all() as $community)
+                    <option value="{{ $community->id }}">{{ $community->name }}</option>
+                @endforeach
             </select>
             <x-input-error :messages="$errors->get('community_id')" class="mt-2" />
         </div>
